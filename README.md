@@ -1,2 +1,2 @@
-# ruby-workshop-
+# ruby-workshop
 ruby-workshop 
