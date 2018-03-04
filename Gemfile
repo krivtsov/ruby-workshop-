@@ -13,6 +13,7 @@ gem 'i18n-debug', group: :development
 gem 'pg', '0.18.1', group: :production
 gem 'rails-i18n', '~> 5.1'
 gem 'rails_12factor', group: :production
+gem 'slim-rails'
 gem 'sqlite3', group: :development
 gem 'validates'
 

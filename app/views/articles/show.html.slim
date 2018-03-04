@@ -1,0 +1,26 @@
+p
+  strong
+    = t('title')
+  = @article.title
+p
+  strong
+    = t('text')
+    | :
+  = @article.text
+p
+  strong
+    = t('author_name')
+  = @article.author_name
+p
+  strong
+    = t('state')
+  = @article.state
+h2
+  = t('comments')
+= render @article.comments
+h2
+  = t('add_a_comment')
+= render 'comments/form'
+= link_to 'Edit', edit_article_path(@article)
+|  | 
+= link_to 'Back', articles_path
