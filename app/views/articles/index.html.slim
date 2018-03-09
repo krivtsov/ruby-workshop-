@@ -1,15 +1,24 @@
 h1
   = t('listing_articles')
+
+= search_form_for @q do |f|
+  = f.label :title_cont
+  = f.search_field :title_cont
+  = f.label :text_cont
+  = f.search_field :text_cont
+  = f.select :state_cont, options_for_select([%w(Draft draft), %w(Published published)], @q.state_cont)
+  = f.submit
+
 table
   tr
     th
-      = t('title')
+      = sort_link(@q, :title)
     th
-      = t('text')
+      = sort_link(@q, :text)
     th
-      = t('author')
+      = sort_link(@q, :author)
     th
-      = t('state')
+      = sort_link(@q, :state)
   - @articles.each do |article|
     tr
       td
@@ -26,7 +35,6 @@ table
         = link_to 'Edit', edit_article_path(article)
       td
         = link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }
-= link_to t('new_article'), new_article_path
 
-
-
+=<> link_to t('home'), articles_path
+=<> link_to t('new_article'), new_article_path
